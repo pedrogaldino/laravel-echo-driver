@@ -1,0 +1,24 @@
+{
+    "name": "pedrogaldino/laravel-echo-driver",
+    "description": "Laravel Echo Driver for Broadcasting",
+    "type": "library",
+    "keywords": ["laravel-echo","broadcasting","laravel"],
+    "homepage": "https://github.com/pedrogaldino/laravel-echo-driver",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pedro Galdino",
+            "email": "eu@pedrogaldino.com",
+            "homepage": "https://github.com/pedrogaldino",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PedroGaldino\\EchoBroadcastDriver\\": "src/"
+        }
+    },
+    "require": {
+        "laravel/framework": "~5.3"
+    }
+}
