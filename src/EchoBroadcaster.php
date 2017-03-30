@@ -15,6 +15,7 @@ class EchoBroadcaster extends Broadcaster
      */
     protected $pusher;
 
+    
     /**
      * Create a new broadcaster instance.
      *
@@ -24,6 +25,7 @@ class EchoBroadcaster extends Broadcaster
     {
         $this->pusher = new PusherProxy($conn_params['key'], null, $conn_params['app_id'], $conn_params['options'], $conn_params['options']['host'], $conn_params['options']['port']);
     }
+
 
     /**
      * Authenticate the incoming request for a given channel.
@@ -47,6 +49,7 @@ class EchoBroadcaster extends Broadcaster
         );
     }
 
+
     /**
      * Return the valid authentication response.
      *
@@ -68,6 +71,7 @@ class EchoBroadcaster extends Broadcaster
         }
     }
 
+
     /**
      * Decode the given Pusher response.
      *
@@ -78,6 +82,7 @@ class EchoBroadcaster extends Broadcaster
     {
         return json_decode($response, true);
     }
+
 
     /**
      * Broadcast the given event.
