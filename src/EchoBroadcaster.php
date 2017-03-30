@@ -1,6 +1,6 @@
 <?php namespace PedroGaldino\EchoBroadcastDriver;
 
-use Illuminate\Broadcasting\Broadcasters\Pusher;
+use Illuminate\Broadcasting\Broadcasters\Broadcaster;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Broadcasting\BroadcastException;
@@ -18,12 +18,11 @@ class EchoBroadcaster extends Broadcaster
     /**
      * Create a new broadcaster instance.
      *
-     * @param  \Pusher  $pusher
-     * @return void
+     * @param  array  $conn_params
      */
     public function __construct($conn_params)
     {
-        $this->pusher = new Pusher($conn_params);
+        $this->pusher = new PusherProxy($conn_params['key'], null, $conn_params['app_id'], $conn_params['options'], $conn_params['options']['host'], $conn_params['options']['port']);
     }
 
     /**

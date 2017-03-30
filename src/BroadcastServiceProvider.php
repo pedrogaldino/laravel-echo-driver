@@ -13,7 +13,7 @@ class BroadcastServiceProvider extends ServiceProvider
     public function boot()
     {
         app(BroadcastManager::class)->extend('echo', function ($app) {
-            $connection = $this->app['config']["broadcasting.connections.echo"]['connection'];
+            $connection = $this->app['config']["broadcasting.connections.echo"];
             return new EchoBroadcaster($connection);
         });
     }
